@@ -1,6 +1,13 @@
-import React from 'react';
-import { Container } from './styles';
+import React from "react";
+import { useMovies } from "./providers/MoviesProvider";
+import { Container, List } from "./styles";
 
-export function MoviesList() {
-  return <Container>MoviesList</Container>
+export default function MoviesList() {
+  const { movies } = useMovies();
+
+  return (
+    <Container>
+      <List></List>
+    </Container>
+  );
 }
