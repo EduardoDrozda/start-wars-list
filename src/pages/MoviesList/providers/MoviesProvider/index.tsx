@@ -1,4 +1,4 @@
-import { createContext, useContext, useLayoutEffect } from "react";
+import { createContext, useContext } from "react";
 import { useAsync } from "../../../../shared/hooks";
 import { IPagination } from "../../../../shared/interfaces";
 import { IMovies } from "../../interfaces/movies";
@@ -13,12 +13,7 @@ const MoviesContext = createContext<MoviesContextProps>(
 );
 
 const MoviesProvider: React.FC = ({ children }) => {
-  const { execute, value } = useAsync(getMovies, false);
-
-  useLayoutEffect(() => {
-    execute();
-    
-  }, [execute]);
+  const { value } = useAsync(getMovies);
 
   return (
     <MoviesContext.Provider

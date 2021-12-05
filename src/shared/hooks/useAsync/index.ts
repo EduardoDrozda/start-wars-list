@@ -6,7 +6,6 @@ export function useAsync(asyncFunction: Function, immediate = true) {
   const [error, setError] = useState(null);
 
   const execute = useCallback(() => {
-    setStatus("pending");
     setValue(null);
     setError(null);
 
@@ -26,5 +25,6 @@ export function useAsync(asyncFunction: Function, immediate = true) {
       execute();
     }
   }, [execute, immediate]);
+
   return { execute, status, value, error };
 }

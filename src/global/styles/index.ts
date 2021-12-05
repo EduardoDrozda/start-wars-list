@@ -5,8 +5,6 @@ import background from "../../assets/img/background.jpg";
 export const GlobalStyle = createGlobalStyle`
   body {
     position: relative;
-    width: 100vw;
-    height: 100vh;
 
     background-image: url(${background});
     background-repeat: no-repeat;
